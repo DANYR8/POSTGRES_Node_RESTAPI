@@ -1,0 +1,1 @@
+INSERT INTO "public"."Customer" ("id", "created_at", "name", "lastname", "birthday", "email", "password") VALUES (1, '2026-04-21 18:57:08.416048+00', 'Jose', 'De La Cruz Martinez', '1989-01-19', 'cruz.martinez@gmail.com', '123456789');
