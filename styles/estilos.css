@@ -1,0 +1,193 @@
+/* ===== RESET Y BASE ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f4f6;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* ===== TÍTULO PRINCIPAL ===== */
+.mainTittle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    font-size: clamp(1.2rem, 4vw, 2rem); /* antes: 200% fijo */
+    background-color: #386294;
+    padding: .5rem 2rem;
+    border-radius: .1rem;
+    text-align: center;
+    width: 100%;
+    border: none; /* el border del mismo color era innecesario */
+}
+
+.headerContainer, headerTextOptions {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    display: flex;
+    text-align: justify;
+    gap: 5rem;
+    padding: 1rem 4rem;
+    background-color: #386294;
+    width: 100%;
+}
+
+.contenerdorImgFondo {
+    position: relative;
+    width: 100%;
+}
+
+.contenerdorImgFondo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.imgFondo {
+    width: 100%;
+    height: 50rem;
+    object-fit: cover;
+    display: block;
+}
+    
+
+/* ===== CONTENEDOR DEL FORMULARIO ===== */
+.formulario {
+    display: flex;
+    flex-wrap: wrap;           /* permite que las tarjetas bajen en móvil */
+    gap: 2rem;                 /* reemplaza los márgenes manuales */
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+/* ===== TARJETAS (customer y worker unificados) ===== */
+.customer,
+.worker {
+    background: white;
+    border-radius: 1.2rem;
+    padding: 2rem 1.5rem;
+    flex: 1 1 260px;           /* crece, se encoge, mínimo 260px */
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== LOGO ===== */
+.imgLogo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    object-position: center center;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* ===== INPUTS (email y password unificados) ===== */
+.emailBox,
+.passwordBox {
+    width: 100%;               /* antes: 20rem fijo que se salía en móvil */
+    height: 2.8rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    border: 1px solid #aaa;
+    border-radius: 0.5rem;
+    padding: 0 0.8rem;
+    font-size: 1rem;
+}
+
+/* ===== BOTÓN ===== */
+.button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;           /* antes: x-large (impredecible entre navegadores) */
+    color: aliceblue;
+    background: #386294;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    width: 100%;               /* ocupa todo el ancho de la tarjeta */
+    margin-top: auto;          /* lo empuja al fondo de la tarjeta */
+}
+
+.button:hover {
+    background: #2d5280;
+    transition: background 0.2s;
+}
+
+/* ===== TEXTOS ===== */
+.texto {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #222;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;          /* antes: 0.7rem causaba texto encimado */
+}
+
+.textoRegister {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #555;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    /* se eliminaron los margin-top y margin-left fijos */
+}
+
+/* botones de  pagina principal */
+.btn-workwood {
+    background-color: transparent; 
+    color: #c79c7b;
+    border: none;
+    padding: 10px 20px;
+    border: 2px solid #c79c7b;
+}
+
+.btn-workwood:hover {
+    background-color: #c79c7b;
+    color:white;
+}
+
+.btn-workwoodw {
+    background-color: transparent; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+}
+
+.btn-workwoodw:hover {
+    background-color:white;
+    color:#c79c7b;
+}
+
+
+
+
+
+
+
+/* ===== RESPONSIVIDAD EXTRA ===== */
+@media (max-width: 600px) {
+    .customer,
+    .worker {
+        max-width: 100%;       /* en móvil ocupan todo el ancho */
+    }
+    /* ===== RESPONSIVO ===== */
+    .headerContainer,p {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .imgLogo {
+        height: 250px;
+    }
+
+}

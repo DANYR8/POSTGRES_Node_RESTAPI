@@ -4,11 +4,13 @@ import { PORT } from './config.js';
 import userRoutes from './routes/users.routes.js';
 import customerRoutes from './routes/customer.routes.js';
 import taskRoutes from "./routes/task.routes.js";
+import skillRoutes from "./routes/employeeSkill.routes.js";
+import informacionRoutes from "./routes/informacion.routes.js";
 import morgan from 'morgan';
 import { pool } from './db.js'; 
 pool.connect()
-  .then(() => console.log('✅ Conectado a Supabase'))
-  .catch(err => console.log('❌ Error de conexión:', err.message));
+  .then(() => console.log('Conectado a Supabase'))
+  .catch(err => console.log('Error de conexión:', err.message));
 
 const app = express();
 
@@ -17,6 +19,9 @@ app.use(express.json());
 app.use(userRoutes);
 app.use(customerRoutes);
 app.use(taskRoutes);
+app.use(skillRoutes);
+app.use(informacionRoutes);
+
 
 app.listen(PORT);
 console.log("Server on port", PORT);
