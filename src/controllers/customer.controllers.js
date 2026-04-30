@@ -17,21 +17,32 @@ export const getCustomerById = async (req, res) =>{
 }
 
 export const createCustomer = async(req, res) =>{
-    try{
+    try {
         const data = req.body;
-        const { rows } = await pool.query('INSERT INTO customer (name, lastname, birthday, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING *', [data.name, data.lastname, data.birthday, data.email, data.password]);
-    }catch{
+        const name     = data.name;
+        const lastname = data.lastName || data.lastname;
+        const birthday = data.birthDay  || data.birthday;
+        const email    = data.email;
+        const password = data.password;
+ 
+        const { rows } = await pool.query(
+            'INSERT INTO customer (name, lastname, birthday, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            [name, lastname, birthday, email, password]
+        );
+ 
+        return res.status(201).json(rows[0]); 
+    } catch (error) {                         
         console.log(error);
-        if(error?.code === "23505"){
-            return res.status(409).json({message: "Email already exist"});
+        if (error?.code === "23505") {
+            return res.status(409).json({ message: "Email already exists" });
         }
-        return res.status(500).json({message: "Internal server error"});
+        return res.status(500).json({ message: "Internal server error" });
     }
 }
 
 export const deleteCustomerById = async(req, res) => {
     const {id} = req.params;
-    const { rowCount} = await pool.query('DELESTE FROM customer WHERE id = $1 RETURNING *', [id]);
+    const { rowCount} = await pool.query('DELETE FROM customer WHERE id = $1 RETURNING *', [id]);
     
     if(rowCount === 0){
         return res.status(404).json({message: "User not found"})

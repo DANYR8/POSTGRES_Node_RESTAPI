@@ -36,7 +36,7 @@ export const deleteInformacion = async(req, res) =>{
 }
 
 export const updateInformacion = async(req, res) =>{
-    const {id} = req.params;
+    const {id} = res.params;
     const data = req.body;
     const {rows} = await pool.query('UPDATE informacion SET title = $1, price = $2 RETRUNING *', [data.title, data.pricre]);
 }

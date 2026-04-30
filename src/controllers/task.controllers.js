@@ -29,7 +29,7 @@ export const createTask = async(req, res) =>{
 
 export const deleteTaskById = async(req, res) => {
     const { id } = req.params;
-    const {rowCount} = await pool.query('DELETE FROM task WHERE id = $1 RETURNIN *',[id]);
+    const {rowCount} = await pool.query('DELETE FROM task WHERE id = $1 RETURNINg *',[id]);
 
     if(rowCount === 0){
         return res.status(404).json({message: "task not found"})

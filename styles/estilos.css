@@ -6,6 +6,7 @@
 body {
     background-color: #f1f4f6;
     margin: 0;
+    padding: 1rem;
     min-height: 100vh;
 }
 
@@ -33,27 +34,69 @@ body {
     width: 100%;
 }
 
-.contenerdorImgFondo {
-    position: relative;
-    width: 100%;
+/*FONDO DE PAGINA---------------------------------------------------------*/
+.hero {
+  position: relative;
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+  url("../Maquetado/fondo-main-page-plmero.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.contenerdorImgFondo::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+/* capa encima */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.imgFondo {
-    width: 100%;
-    height: 50rem;
-    object-fit: cover;
-    display: block;
+/* tarjeta */
+.card-login {
+  background: rgba(255, 255, 255, 0.500);
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+
+/* inputs */
+.card-login input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+.card-login h2 {
+  text-align: center;
+  color: black;
+}
+
+/* botón */
+.card-login button {
+  width: 100%;
+  padding: 10px;
+  background: #2c5c8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card-login p {
+  text-align: center;
+  cursor: pointer;
+  color: blue;
+}
+
+
     
 
 /* ===== CONTENEDOR DEL FORMULARIO ===== */
@@ -140,7 +183,38 @@ body {
     /* se eliminaron los margin-top y margin-left fijos */
 }
 
-/* botones de  pagina principal */
+/* botones de  pagina principal--------------------------------------------*/
+
+.fav {
+  position: absolute;
+  top: 115px;
+  right: 40px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fav:hover {
+    color: #c79c7b;
+}
+
+.btn-cp {
+    background-color: transparent; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    position: absolute;
+     top: 100px;
+     left: 40px;
+}
+
+.btn-cp:hover {
+    background-color: white;
+    color:#c79c7b;
+}
+
 .btn-workwood {
     background-color: transparent; 
     color: #c79c7b;
@@ -168,8 +242,149 @@ body {
 }
 
 
+/* barra de navegación--------------------------*/
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONDO GENERAL */
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+}
 
 
+
+/* HEADER (posición de la barra) */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+/* CONTENEDOR DEL BUSCADOR */
+.buscador {
+  position: relative;
+  width: 350px;
+}
+
+/* INPUT */
+.buscador input {
+  width: 100%;
+  padding: 12px 45px 12px 20px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+
+  transition: all 0.3s ease;
+}
+
+/* EFECTO AL HACER CLICK */
+.buscador input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0,123,255,0.3);
+}
+
+/* ICONO */
+.icono {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #acacac;
+  pointer-events: none; /* evita que estorbe al escribir */
+}
+
+/* HOVER (opcional) */
+.buscador:hover input {
+  border-color: #999;
+}
+
+/*fin de barra de navegación----------------------*/
+
+/*cartas de recomendacion------------------------*/
+
+/* CONTENEDOR */
+.contenedor-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* TARJETA */
+.card {
+  background: #e9ecef;
+  width: 220px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+/* EFECTO HOVER */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* AVATAR */
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 3px solid #2c3e50;
+  background: #ccc;
+}
+
+/* NOMBRE */
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+/* PROFESIÓN */
+.card p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* RATING */
+.rating {
+  color: #f4c542;
+  margin-bottom: 15px;
+}
+
+.rating span {
+  color: #333;
+  margin-left: 5px;
+}
+
+/* BOTÓN */
+.card button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #45a049;
+}
+
+/*fin de cartas---------------------*/
 
 
 
