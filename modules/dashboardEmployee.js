@@ -1,7 +1,6 @@
 const employee = JSON.parse(sessionStorage.getItem('employee'));
-const customer = JSON.parse(sessionStorage.getItem('customer'));
 
-if (!employee || !customer) {
+if (!employee) {
     alert('Debes iniciar sesión primero');
     window.location.href = '../pages/index.html';
 }
