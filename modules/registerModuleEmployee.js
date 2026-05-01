@@ -1,40 +1,38 @@
 
-//Customer
-function mostrarRegistro() {
-    document.querySelector(".card-login").style.display = "none";
-    document.getElementById("registro").style.display = "block";
+function mostrarRegistroEmployee() {
+    document.querySelector(".card-login-Employee").style.display = "none";
+    document.getElementById("registro-Employee").style.display = "block";
 }
 
-function mostrarLogin() {
-    document.querySelector(".card-login").style.display = "block";
-    document.getElementById("registro").style.display = "none";
+function mostrarLoginEmployee() {
+    document.querySelector(".card-login-Employee").style.display = "block";
+    document.getElementById("registro-Employee").style.display = "none";
 }
 
 
 
 
-document.getElementById('registerForm').addEventListener('submit', async (e) => {
+document.getElementById('registerFormEmployee').addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('regEmail').value
     const password = document.getElementById('password').value
     const name = document.getElementById('name').value
-    const lastname = document.getElementById('lastName').value
     const birthday = document.getElementById('birthday').value
 
     try {
-        const response = await fetch('http://localhost:4000/customer', {
+        const response = await fetch('http://localhost:4000/employee', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name, lastname, birthday, email, password})
+            body: JSON.stringify({ name, birthday, email, password})
         });
 
         const data = await response.json();
 
         if (response.ok) {
             alert(`Usuario creado: ${data.name}`);
-            mostrarLogin();
+            mostrarLoginEmployee();
         } else {
             alert(`Error: ${data.message}`);
         }
@@ -48,24 +46,25 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
 
 })
 
-document.getElementById('loginForm').addEventListener('submit', async function (event) {
+document.getElementById('loginFormEmployee').addEventListener('submit', async function (event) {
     event.preventDefault();
  
-    const email    = document.getElementById('emailLogin').value;
-    const password = document.getElementById('passwordLogin').value;
+    const email    = document.getElementById('emailLoginEmployee').value;
+    const password = document.getElementById('passwordLoginEmployee').value;
  
     try {
-        const response = await fetch('http://localhost:4000/customer/login', {
+        const response = await fetch('http://localhost:4000/employee/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
         });
  
-        const data = await response.json();
+        const dataEmployee = await response.json();
  
         if (response.ok) {
-            sessionStorage.setItem('customer', JSON.stringify(data.customer));
-            window.location.href = '../pages/dashboard.html';
+            console.log(dataEmployee); 
+            sessionStorage.setItem('employee', JSON.stringify(dataEmployee.employee));
+            window.location.href = '../pages/dashboardEmployee.html';
         } else {
             alert(`Error: ${data.message}, Correo/Password Incorrecto`);
         }

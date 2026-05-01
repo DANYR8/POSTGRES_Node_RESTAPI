@@ -18,7 +18,7 @@ export const getEmployeeById = async (req, res) => {
 
 export const findEmployeeByEmail = async (req, res) => {
     try {
-        const { email, password } = req.body;  // ← req.body, no req.params
+        const { email, password } = req.body;  
  
         const { rows } = await pool.query(
             'SELECT * FROM employee WHERE email = $1', [email]
@@ -28,14 +28,14 @@ export const findEmployeeByEmail = async (req, res) => {
             return res.status(401).json({ message: "Correo o contraseña incorrectos" });
         }
  
-        const customer = rows[0];
+        const employee = rows[0];
  
-        if (customer.password !== password) {
+        if (employee.password !== password) {
             return res.status(401).json({ message: "Correo o contraseña incorrectos" });
         }
  
-        const { password: _, ...customerSafe } = customer;
-        return res.status(200).json({ message: "Login exitoso", customer: customerSafe });
+       const { password: _, ...employeeSafe } = employee;
+       return res.status(200).json({ message: "Login exitoso", employee: employeeSafe });
  
     } catch (error) {
         console.log(error);

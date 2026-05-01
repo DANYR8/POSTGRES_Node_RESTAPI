@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Mi Proyecto Web</title>
+    <title>dashboardEmployee</title>
 
     <!-- 1. Bootstrap primero (estilos base) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +14,7 @@
     <!-- 2. Tus estilos generales -->
     <link rel="stylesheet" href="../styles/estilos.css">
     <!-- 3. Estilos específicos de esta página al final — tienen la última palabra -->
-    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/dashboardEmployee.css">
 </head>
 
 <body>
@@ -22,9 +22,7 @@
         <h1>WorkWood</h1>
     </div>
     <div class="headerContainer d-flex justify-content-center gap-3">
-
         <a class="bi bi-heart-fill fav"></a>
-
         <a class="btn btn-cp" id="btnCP">cp</a>
         <a class="btn btn-workwood" href="../pages/index.html">Inicio</a>
         <a class="btn btn-workwoodw" href="../pages/buscarOficio.html">Buscar Oficio</a>
@@ -44,18 +42,18 @@
         </div>
     </nav>
 
-    <div class="cardPerfilProfecional">
+    <div class="cardPerfilProfecionalEmployee">
         <h3>Datos de Contratista</h3>
-        <p>id: <span id="dashId"></span></p>
-        <p>Nombre: <span id="dashNombre"></span></p>
-        <p>Email: <span id="dashEmail"></span></p>
-        <p>Ubicacion: <span id="dashUbicacion"></span></p>
-        <p>Oficio: <span id="dashHabilidades"></span></p>
+        <p>id: <span id="dashEmployeeId"></span></p>
+        <p>Nombre: <span id="dashEmployeeNombre"></span></p>
+        <p>Email: <span id="dashEmployeeEmail"></span></p>
+        <p>Ubicacion: <span id="dashEmployeeUbicacion"></span></p>
+        <p>Oficio: <span id="dashEmployeeHabilidades"></span></p>
         <button type="button" onclick="editarInformacion()" class="btn btn-warning">Modificar Informacion</button>
     </div>
 
 
-    <div class="cardPerfilProfecional" id="editarPerfilPofrecional" style="display:none;">
+    <div class="cardPerfilProfecional" id="editarPerfilPofrecionalEmployee" style="display:none;">
         <h3>Datos de Contratista</h3>
         <input type="text" placeholder="Nuevo Nombre">
         <input type="email" placeholder="Nuevo Email">
@@ -65,7 +63,7 @@
     </div>
 
 
-    <script src="../modules/dashboard.js"></script>
+    <script src="../modules/dashboardEmployee.js"></script>
 </body>
 
 </html>

@@ -9,11 +9,13 @@ router.get('/employee/:id', getEmployeeById)
 
 router.post('/employee', createEmployee)
 
+router.post('/employee/login', findEmployeeByEmail)
+
 router.delete('/employee/:id', deleteEmployeeById)
 
 router.put ('/employee/:id', updateEmployee)
 
-router.post('/employee/login', findEmployeeByEmail)
+
 
 
 export default router;

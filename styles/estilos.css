@@ -96,6 +96,47 @@ body {
   color: blue;
 }
 
+/* tarjeta Employee*/
+.card-login-Employee {
+  background: rgba(255, 255, 255, 0.500);
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* inputs */
+.card-login-Employee input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+.card-login-Employee h2 {
+  text-align: center;
+  color: black;
+}
+
+/* botón */
+.card-login-Employee button {
+  width: 100%;
+  padding: 10px;
+  background: #2c5c8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card-login-Employee p {
+  text-align: center;
+  cursor: pointer;
+  color: blue;
+}
+
+
+
 
     
 

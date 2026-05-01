@@ -1,0 +1,22 @@
+body {
+    background-color: #f1f4f6;
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.cardPerfilProfecionalEmployee {
+    background: #949494;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cardPerfilProfecionalEmployee p{
+    padding: 30px;
+    background-color: #f1f4f6;
+    border-radius: 10px;
+}
+
