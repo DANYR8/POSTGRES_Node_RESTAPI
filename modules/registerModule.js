@@ -11,19 +11,7 @@ function mostrarLogin() {
 
 
 
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value
-    const password = document.getElementById('password').value
-
-    console.log(email)
-    console.log(password)
-
-
-
-})
-
-
+// ── REGISTRO  ───────────────────────────────────────────────────────────────
 document.getElementById('registerForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('regEmail').value
@@ -58,4 +46,34 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
 
 
 })
+
+document.getElementById('loginForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
+ 
+    const email    = document.getElementById('emailLogin').value;
+    const password = document.getElementById('passwordLogin').value;
+ 
+    try {
+        const response = await fetch('http://localhost:4000/customer/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+ 
+        const data = await response.json();
+ 
+        if (response.ok) {
+            sessionStorage.setItem('customer', JSON.stringify(data.customer));
+            window.location.href = '../pages/dashboard.html';
+        } else {
+            alert(`Error: ${data.message}, Correo/Password Incorrecto`);
+        }
+ 
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error);
+        alert('No se pudo conectar con el servidor');
+    }
+});
+
+
 

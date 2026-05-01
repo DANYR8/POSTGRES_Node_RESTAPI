@@ -1,0 +1,42 @@
+body {
+    background-color: white;
+}
+
+
+.contenedor {
+    display: flex;
+    position: relative;
+    height: auto;
+    background: none;
+    margin: 10px;
+}
+
+.contenedor img {
+    margin: 10px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+}
+
+.contenedor button{
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border: 2px solid #386294;
+    position: absolute;
+    top: 105px;
+    left: 400px;
+
+}
+
+.contenedor h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 40px;
+}
+
+.contenedor formHelp{
+    margin-top: 100px;
+}

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getCustomer, getCustomerById, createCustomer, deleteCustomerById, updateCustomer} from '../controllers/customer.controllers.js';
+import { getCustomer, getCustomerById, createCustomer, deleteCustomerById, updateCustomer,findCustomerByEmail} from '../controllers/customer.controllers.js';
 
 const router = Router();
 
@@ -12,6 +12,8 @@ router.post('/Customer', createCustomer)
 router.delete('/Customer/:id', deleteCustomerById)
 
 router.put ('/Customer/:id', updateCustomer)
+
+router.post('/customer/login', findCustomerByEmail)
 
 export default router;
 

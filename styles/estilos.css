@@ -269,6 +269,7 @@ body {
 
 /* CONTENEDOR DEL BUSCADOR */
 .buscador {
+  display: flex;
   position: relative;
   width: 350px;
 }
@@ -277,7 +278,7 @@ body {
 .buscador input {
   width: 100%;
   padding: 12px 45px 12px 20px;
-  border-radius: 30px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   outline: none;
   font-size: 16px;
@@ -291,10 +292,14 @@ body {
   box-shadow: 0 0 10px rgba(0,123,255,0.3);
 }
 
+.buscador button{
+    margin: 10px;
+}
+
 /* ICONO */
 .icono {
   position: absolute;
-  right: 15px;
+  right: 110px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 18px;
@@ -386,7 +391,34 @@ body {
 
 /*fin de cartas---------------------*/
 
+/*Cartas en busqueda de oficio*/
 
+.card-employee {
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 700px;
+}
+
+.employee-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.employee-skill {
+    color: #888;
+    font-size: 14px;
+}
+
+.cards-container{
+    margin-bottom: 10px;
+}
 
 /* ===== RESPONSIVIDAD EXTRA ===== */
 @media (max-width: 600px) {
@@ -406,3 +438,4 @@ body {
     }
 
 }
+

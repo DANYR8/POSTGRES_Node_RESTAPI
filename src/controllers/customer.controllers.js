@@ -16,6 +16,34 @@ export const getCustomerById = async (req, res) =>{
     res.json(rows[0]);
 }
 
+export const findCustomerByEmail = async (req, res) => {
+    try {
+        const { email, password } = req.body;  // ← req.body, no req.params
+ 
+        const { rows } = await pool.query(
+            'SELECT * FROM customer WHERE email = $1', [email]
+        );
+ 
+        if (rows.length === 0) {
+            return res.status(401).json({ message: "Correo o contraseña incorrectos" });
+        }
+ 
+        const customer = rows[0];
+ 
+        if (customer.password !== password) {
+            return res.status(401).json({ message: "Correo o contraseña incorrectos" });
+        }
+ 
+        const { password: _, ...customerSafe } = customer;
+        return res.status(200).json({ message: "Login exitoso", customer: customerSafe });
+ 
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+}
+ 
+
 export const createCustomer = async(req, res) =>{
     try {
         const data = req.body;
@@ -57,3 +85,4 @@ export const updateCustomer = async(req, res) =>{
     const {rows} = await pool.query('UPADATE customer SET name = $1, lastName = $2, birthday = $3, email = $4, password = $5 RETURNING *', [data.name, data.lastName, data.birtday, data.email, data.password]);
 
 }
+
