@@ -1,8 +1,8 @@
-const employee = JSON.parse(sessionStorage.getItem('employee'));
+
 const customer = JSON.parse(sessionStorage.getItem('customer'));
 
 
-if(!customer || !employee){
+if (!customer ) {
     alert('Debes iniciar sesión primero');
     window.location.href = '../pages/index.html';
 }
@@ -25,7 +25,7 @@ function guardarInformacion(){
     e.preventDefault();
 
         try{
-            const response = await fetch(`/employee/${data.id}`,{
+            const response = await fetch(`/customer/${data.id}`,{
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email,})
