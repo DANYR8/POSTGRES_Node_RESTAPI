@@ -47,8 +47,13 @@ export const findEmployeeByEmail = async (req, res) => {
 
 export const createEmployee = async (req, res) => {
     try {
+
         const data = req.body;
-        const { rows } = await pool.query('INSERT INTO employee (name, email) VALUES ($1, $2) RETURNING *', [data.name, data.email]);
+        const name     = data.name;
+        const birthday = data.birthday;
+        const email    = data.email;
+        const password = data.password;
+        const { rows } = await pool.query('INSERT INTO employee (name, email, password, birthday ) VALUES ($1, $2, $3, $4) RETURNING *', [data.name, data.email, data.password, data.birthDay]);
         return res.json(rows[0]);
     } catch (error) {
         console.log(error);

@@ -14,10 +14,10 @@ function mostrarLoginEmployee() {
 
 document.getElementById('registerFormEmployee').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = document.getElementById('regEmail').value
-    const password = document.getElementById('password').value
-    const name = document.getElementById('name').value
-    const birthday = document.getElementById('birthday').value
+    const email = document.getElementById('regEmailEmployee').value
+    const password = document.getElementById('passwordEmployee').value
+    const name = document.getElementById('nameEmployee').value
+    const birthday = document.getElementById('birthdayEmployee').value
 
     try {
         const response = await fetch('http://localhost:4000/employee', {
@@ -25,7 +25,7 @@ document.getElementById('registerFormEmployee').addEventListener('submit', async
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name, birthday, email, password})
+            body: JSON.stringify({ name, email, password, birthday})
         });
 
         const data = await response.json();

@@ -25,7 +25,7 @@ function guardarInformacion(){
     e.preventDefault();
 
         try{
-            const response = await fetch(`/employee/${data.id}`,{
+            const response = await fetch(`/customer/${data.id}`,{
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email,})
