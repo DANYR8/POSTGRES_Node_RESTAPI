@@ -383,13 +383,38 @@ body {
 }
 
 /* AVATAR */
-.avatar {
+/* AVATAR */
+.avatar-1 {
   width: 80px;
   height: 80px;
   margin: 0 auto 10px;
   border-radius: 50%;
   border: 3px solid #2c3e50;
-  background: #ccc;
+  background-image: url("../Maquetado/soldador.jpg");
+  background-position: center 20%;
+  background-size: cover;
+}
+
+.avatar-2 {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 3px solid #2c3e50;
+  background-image: url("../Maquetado/electrisista.jpg");
+  background-position: center 40%;
+  background-size: cover;
+}
+
+.avatar-3 {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 3px solid #2c3e50;
+  background-image: url("../Maquetado/plomero.jpg");
+  background-position: center 20%;
+  background-size: cover;
 }
 
 /* NOMBRE */

@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda - WorkWood</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../styles/ayuda.css">
+  <link rel="stylesheet" href="../styles/estilos.css">
 
-    <head>
-
-        <meta charset="UTF-8">
-        <title>Ayuda</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="../styles/ayuda.css">
-        <link rel="stylesheet" href="../styles/estilos.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    </head>
 </head>
-
 <body>
 
     <div class="mainTittle">
@@ -28,26 +22,219 @@
         <a class="btn btn-workwood" href="../pages/index.html">Inicio</a>
         <a class="btn btn-workwoodw" href="../pages/buscarOficio.html">Buscar Oficio</a>
         <a class="btn btn-workwood" href="../pages/ayuda.html">Ayuda</a>
-    </div>
-
-    <div class="card-login" id="registro" style="display:none;">
-        <h2>Crear cuenta</h2>
-        <form id="registerForm">
-            <input type="text" id="name" placeholder="Nombre" required>
-            <input type="text" id="lastName" placeholder="Apellido" required>
-            <input type="date" id="birthday" placeholder="Fecha de Nacimiento" required>
-            <input type="email" id="regEmail" placeholder="Correo" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
-            <button type="submit">Registrarse</button>
-        </form>
 
     </div>
 
 
+  <!-- BARRA DE BÚSQUEDA -->
+  <div class="ww-searchbar">
+    <div class="search-wrap">
+      <input type="text" id="helpSearch" placeholder="Buscar en ayuda..."
+             onkeydown="if(event.key==='Enter') buscarAyuda()">
+      <i class="bi bi-search" onclick="buscarAyuda()"></i>
+    </div>
+  </div>
 
+  <!-- HERO -->
+  <div class="ww-hero">
+    <h2><i class="bi bi-patch-question-fill me-2"></i>Centro de Ayuda</h2>
+    <p>Encuentra respuestas a tus preguntas o contáctanos directamente. Estamos aquí para ayudarte.</p>
+  </div>
 
+  <!-- MAIN -->
+  <div class="ww-main">
+
+    <!-- BANNER -->
+    <div class="info-banner">
+      <i class="bi bi-info-circle-fill"></i>
+      <p><strong>¿Es tu primera vez en WorkWood?</strong> Lee la guía de inicio rápido y aprende a buscar contratistas, crear tu cuenta y solicitar un servicio en minutos.</p>
+    </div>
+
+    <!-- PASOS -->
+    <div class="sec-title"><i class="bi bi-list-ol"></i>¿Cómo empezar?</div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h5>Crea tu cuenta</h5>
+        <p>Regístrate como <strong>Cliente</strong> si buscas servicios o como <strong>Contratista</strong> si ofreces un oficio.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h5>Busca un oficio</h5>
+        <p>Usa la barra de búsqueda para encontrar electricistas, plomeros, soldadores y más cerca de ti.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h5>Contacta al profesional</h5>
+        <p>Revisa el perfil, calificaciones y reseñas. Haz clic en <em>Contactar</em> para iniciar.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h5>Califica el servicio</h5>
+        <p>Una vez finalizado el trabajo deja tu reseña y ayuda a la comunidad WorkWood.</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div id="faq" class="faq-wrap">
+      <div class="sec-title"><i class="bi bi-question-circle"></i>Preguntas frecuentes</div>
+      <div class="accordion" id="faqAcc">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f1">
+              ¿Cómo creo una cuenta en WorkWood?
+            </button>
+          </h2>
+          <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              En la página principal encontrarás formularios para <strong>Clientes</strong> y <strong>Contratistas</strong>. Haz clic en "Crear cuenta", completa tu nombre, correo y contraseña. Recibirás un correo de confirmación para activar tu cuenta.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">
+              ¿Cómo busco un contratista cerca de mí?
+            </button>
+          </h2>
+          <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Ve a <strong>Buscar Oficio</strong> en el menú. Escribe el tipo de servicio (ej. "electricista") y activa el mapa para ver contratistas disponibles en tu zona.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">
+              ¿Cómo funciona el sistema de calificaciones?
+            </button>
+          </h2>
+          <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Cada contratista tiene una puntuación de 1 a 5 estrellas basada en reseñas de clientes. Después de recibir un servicio podrás dejar tu calificación y comentario.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">
+              ¿Olvidé mi contraseña, qué hago?
+            </button>
+          </h2>
+          <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              En el formulario de inicio de sesión haz clic en <strong>"¿Olvidaste tu contraseña?"</strong>. Ingresa tu correo y recibirás un enlace para restablecerla en minutos.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5">
+              ¿Cómo registro mi oficio como contratista?
+            </button>
+          </h2>
+          <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Al crear tu cuenta como Contratista completa tu perfil con tu especialidad, experiencia y zona de trabajo. Tras la verificación del equipo WorkWood tu perfil aparecerá en los resultados de búsqueda.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f6">
+              ¿Es seguro contratar a través de WorkWood?
+            </button>
+          </h2>
+          <div id="f6" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Sí. Todos los contratistas pasan por verificación de identidad. Puedes revisar calificaciones y comentarios antes de contactarlos. Tu información nunca se comparte sin tu consentimiento.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f7">
+              ¿Cómo reviso mis solicitudes activas?
+            </button>
+          </h2>
+          <div id="f7" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Ve a <strong>Mis Solicitudes</strong> en el menú superior. Ahí verás todas tus solicitudes activas, el historial de servicios y el estado actual de cada una.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div id="contacto">
+      <div class="sec-title"><i class="bi bi-telephone"></i>Contáctanos</div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="bi bi-envelope-fill"></i>
+          <h6>Correo electrónico</h6>
+          <p>Respuesta en menos de 24 horas hábiles</p>
+          <a href="mailto:soporte@workwood.com" class="btn-contact">soporte@workwood.com</a>
+        </div>
+        <div class="contact-card">
+          <i class="bi bi-chat-dots-fill"></i>
+          <h6>Chat en vivo</h6>
+          <p>Lunes a viernes, 9 am – 6 pm</p>
+          <a href="#" class="btn-contact">Iniciar chat</a>
+        </div>
+        <div class="contact-card">
+          <i class="bi bi-telephone-fill"></i>
+          <h6>Línea telefónica</h6>
+          <p>Lunes a sábado, atención urgente</p>
+          <a href="tel:+523312345678" class="btn-contact">+52 33 1234-5678</a>
+        </div>
+        <div class="contact-card">
+          <i class="bi bi-instagram"></i>
+          <h6>Redes sociales</h6>
+          <p>Escríbenos por nuestras redes oficiales</p>
+          <a href="#" class="btn-contact">@WorkWood</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /ww-main -->
+
+  <!-- FOOTER -->
+  <div class="ww-footer">
+    <span>WorkWood</span> &copy; 2024 — Todos los derechos reservados.
+    Desarrollado por Daniel Alejandro Campos De La Torre.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function buscarAyuda() {
+      const q = document.getElementById('helpSearch').value.toLowerCase().trim();
+      if (!q) return;
+      let found = false;
+      document.querySelectorAll('.accordion-item').forEach(item => {
+        const btn  = item.querySelector('.accordion-button');
+        const body = item.querySelector('.accordion-body');
+        const hit  = btn.textContent.toLowerCase().includes(q) ||
+                     (body && body.textContent.toLowerCase().includes(q));
+        if (hit) {
+          btn.classList.remove('collapsed');
+          item.querySelector('.accordion-collapse').classList.add('show');
+          if (!found) {
+            setTimeout(() => btn.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+            found = true;
+          }
+        }
+      });
+      if (!found) alert('No se encontraron resultados para "' + q + '".');
+    }
+  </script>
 </body>
-
-
-
 </html>
