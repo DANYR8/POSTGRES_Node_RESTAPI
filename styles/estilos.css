@@ -57,8 +57,28 @@ body {
   align-items: center;
 }
 
-/* tarjeta */
+/*ajusta las targetas-------------------------------------------------*/
+.contenedor-login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* tarjeta customer------------------ */
 .card-login {
+  background: rgba(255, 255, 255, 0.500);
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* tarjeta Employee-------------*/
+.card-login-Employee {
   background: rgba(255, 255, 255, 0.500);
   padding: 20px;
   border-radius: 12px;
@@ -96,15 +116,6 @@ body {
   color: blue;
 }
 
-/* tarjeta Employee*/
-.card-login-Employee {
-  background: rgba(255, 255, 255, 0.500);
-  padding: 20px;
-  border-radius: 12px;
-  width: 300px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
 
 /* inputs */
 .card-login-Employee input {
@@ -382,7 +393,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* AVATAR */
 /* AVATAR */
 .avatar-1 {
   width: 80px;
