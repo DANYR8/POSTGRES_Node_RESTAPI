@@ -57,8 +57,28 @@ body {
   align-items: center;
 }
 
-/* tarjeta */
+/*ajusta las targetas-------------------------------------------------*/
+.contenedor-login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* tarjeta customer------------------ */
 .card-login {
+  background: rgba(255, 255, 255, 0.500);
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* tarjeta Employee-------------*/
+.card-login-Employee {
   background: rgba(255, 255, 255, 0.500);
   padding: 20px;
   border-radius: 12px;
@@ -96,15 +116,6 @@ body {
   color: blue;
 }
 
-/* tarjeta Employee*/
-.card-login-Employee {
-  background: rgba(255, 255, 255, 0.500);
-  padding: 20px;
-  border-radius: 12px;
-  width: 300px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
 
 /* inputs */
 .card-login-Employee input {
@@ -383,13 +394,37 @@ body {
 }
 
 /* AVATAR */
-.avatar {
+.avatar-1 {
   width: 80px;
   height: 80px;
   margin: 0 auto 10px;
   border-radius: 50%;
   border: 3px solid #2c3e50;
-  background: #ccc;
+  background-image: url("../Maquetado/soldador.jpg");
+  background-position: center 20%;
+  background-size: cover;
+}
+
+.avatar-2 {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 3px solid #2c3e50;
+  background-image: url("../Maquetado/electrisista.jpg");
+  background-position: center 40%;
+  background-size: cover;
+}
+
+.avatar-3 {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 3px solid #2c3e50;
+  background-image: url("../Maquetado/plomero.jpg");
+  background-position: center 20%;
+  background-size: cover;
 }
 
 /* NOMBRE */
